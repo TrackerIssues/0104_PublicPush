@@ -1,0 +1,85 @@
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Python package Git Action
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  # schedule:
+    # - cron: '*/30 * * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    # - uses: actions/checkout@v3
+    
+    - uses: actions/labeler@v2
+      with:
+        repo-token: ${{ secrets.F1T }}
+        
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v1
+      with:
+          python-version: '3.x'
+          architecture: 'x64'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Run Scraper with python
+      run: |
+        python app.py
+    # - uses: actions/labeler@v2
+    #   with:
+    #     repo-token: ${{secrets.TOKEN}}
+    - name: Commits and Run
+      run: |
+        git config --local user.email "trackin9issues@gmail.com"
+        git config --local user.name "Tracker" # 커밋에 포함될 이름
+        # git add .
+        
+        git add DfData.csv
+        git commit -m "Auto - Update data with Scraping" # 커밋 메세지
+
+        # git remote add origin https://github.com/TrackerIssues/0102_GitActNews.git
+        # git branch -M main  
+        # git push -u origin main
+
+       
+        
+        # print(${{secrets.GITHUB_TOKEN}})
+        # print(${{secrets.TRACKERTOKEN}})
+        
+        # # git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}
+        # git remote set-url origin https://x-access-token:${{ secrets.F1T }}@github.com/${{ github.repository }}
+        
+        # git remote set-url origin https://${{secrets.F1T}}@github.com/TrackerIssues/0102_GitActNews.git
+        # git remote set-url origin https://TrackerIssues:${{secrets.F1T}}@github.com/TrackerIssues/0102_GitActNews.git
+        git push
+
+ 
+        
+    # #     # git push
+    # - name: Push
+      # env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #   git remote set-url --push origin https://your_username:$GITHUB_TOKEN@github.com/your/repo
+
+    
+    #   run: |
+    #     # git push
+    # # #   # uses: ad-m/github-push-action@master/
+    #   with:
+    #     branch: main
+    #     github_token: ${{secrets.F1T}}
+      # run: |
+        # git push
+        
+        
