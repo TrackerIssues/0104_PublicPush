@@ -37,7 +37,7 @@ jobs:
         # git config --local user.email "trackin9issues@gmail.com"
         # git config --local user.name "Tracker" # 커밋에 포함될 이름
         git config --global user.email "trackin9issues@gmail.com"
-        git config --global user.name "Tracker" # 커밋에 포함될 이름
+        git config --global user.name "TrackerIssues" # 커밋에 포함될 이름
         # git add .
         
         git add DfData.csv
