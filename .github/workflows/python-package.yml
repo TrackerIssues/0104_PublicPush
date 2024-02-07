@@ -43,14 +43,16 @@ jobs:
         git add DfData.csv
         git commit -m "Auto - Update data with Scraping" # 커밋 메세지
 
+        git push
+
+        
+
         # git remote add origin https://github.com/TrackerIssues/0102_GitActNews.git
         # git branch -M main  
         # git push -u origin main
-
         
         # git remote set-url origin https://${{secrets.F1T}}@github.com/TrackerIssues/0102_GitActNews.git
         # git remote set-url origin https://TrackerIssues:${{secrets.F1T}}@github.com/TrackerIssues/0102_GitActNews.git
-        git push
 
  
         
