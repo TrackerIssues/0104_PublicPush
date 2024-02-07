@@ -17,12 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    # - uses: actions/checkout@v3
-    
-    - uses: actions/labeler@v2
-      with:
-        repo-token: ${{ secrets.F1T }}
+    - uses: actions/checkout@v2    
         
     - name: Set up Python 3.x
       uses: actions/setup-python@v1
@@ -36,9 +31,11 @@ jobs:
     - name: Run Scraper with python
       run: |
         python app.py
+
     # - uses: actions/labeler@v2
     #   with:
     #     repo-token: ${{secrets.TOKEN}}
+    
     - name: Commits and Run
       run: |
         git config --local user.email "trackin9issues@gmail.com"
