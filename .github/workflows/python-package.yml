@@ -31,15 +31,13 @@ jobs:
     - name: Run Scraper with python
       run: |
         python app.py
-
-    # - uses: actions/labeler@v2
-    #   with:
-    #     repo-token: ${{secrets.TOKEN}}
     
     - name: Commits and Run
       run: |
-        git config --local user.email "trackin9issues@gmail.com"
-        git config --local user.name "Tracker" # 커밋에 포함될 이름
+        # git config --local user.email "trackin9issues@gmail.com"
+        # git config --local user.name "Tracker" # 커밋에 포함될 이름
+        git config user.email "trackin9issues@gmail.com"
+        git config user.name "Tracker" # 커밋에 포함될 이름
         # git add .
         
         git add DfData.csv
@@ -49,34 +47,11 @@ jobs:
         # git branch -M main  
         # git push -u origin main
 
-       
-        
-        # print(${{secrets.GITHUB_TOKEN}})
-        # print(${{secrets.TRACKERTOKEN}})
-        
-        # # git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}
-        # git remote set-url origin https://x-access-token:${{ secrets.F1T }}@github.com/${{ github.repository }}
         
         # git remote set-url origin https://${{secrets.F1T}}@github.com/TrackerIssues/0102_GitActNews.git
         # git remote set-url origin https://TrackerIssues:${{secrets.F1T}}@github.com/TrackerIssues/0102_GitActNews.git
         git push
 
  
-        
-    # #     # git push
-    # - name: Push
-      # env:
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #   git remote set-url --push origin https://your_username:$GITHUB_TOKEN@github.com/your/repo
-
-    
-    #   run: |
-    #     # git push
-    # # #   # uses: ad-m/github-push-action@master/
-    #   with:
-    #     branch: main
-    #     github_token: ${{secrets.F1T}}
-      # run: |
-        # git push
         
         
