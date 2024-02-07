@@ -45,12 +45,12 @@ jobs:
 
         # git remote add origin https://github.com/TrackerIssues/0102_GitActNews.git
         # git branch -M main  
-        # git push -u origin main
+        git push -u origin main
 
         
         # git remote set-url origin https://${{secrets.F1T}}@github.com/TrackerIssues/0102_GitActNews.git
         # git remote set-url origin https://TrackerIssues:${{secrets.F1T}}@github.com/TrackerIssues/0102_GitActNews.git
-        git push
+        # git push
 
  
         
