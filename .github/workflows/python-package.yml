@@ -36,8 +36,7 @@ jobs:
       run: |
         git config --local user.email "trackin9issues@gmail.com"
         git config --local user.name "Tracker" # 커밋에 포함될 이름
-        # git config --global user.email "trackin9issues@gmail.com"
-        # git config --global user.name "TrackerIssues" # 커밋에 포함될 이름
+        
         git add .
         
         # git add DfData.csv
@@ -50,10 +49,4 @@ jobs:
         # git remote add origin https://github.com/TrackerIssues/0102_GitActNews.git
         # git branch -M main  
         # git push -u origin main
-        
-        # git remote set-url origin https://${{secrets.F1T}}@github.com/TrackerIssues/0102_GitActNews.git
-        # git remote set-url origin https://TrackerIssues:${{secrets.F1T}}@github.com/TrackerIssues/0102_GitActNews.git
-
- 
-        
         
